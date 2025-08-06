@@ -9,7 +9,9 @@ spec:
     - https://charts.bitnami.com/bitnami
     - https://github.com/MichielVanHerreweghe/gitops-demo.git
   destinations:
-    - namespace: 'home' # Allow all namespaces for aks-components
+    - namespace: 'home'
+      server: https://kubernetes.default.svc
+    - namespace: 'argocd'
       server: https://kubernetes.default.svc
   clusterResourceWhitelist: # Allow cluster-wide deployments
   - group: '*'
