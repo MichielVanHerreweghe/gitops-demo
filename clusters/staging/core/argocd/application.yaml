@@ -9,7 +9,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
-  project: core
+  project: cluster-core
   sources:
     - repoURL: 'https://github.com/MichielVanHerreweghe/gitops-demo.git'
       path: clusters/staging/core/argocd/manifests
