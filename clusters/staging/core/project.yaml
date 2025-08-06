@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: cluster-core
+  namespace: argocd
+spec:
+  description: An ArgoCD project for core cluster components
+  sourceRepos:
+    - '*' # Allow all source repositories
+  destinations:
+    - namespace: '*' # Allow all namespaces for aks-components
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist: # Allow cluster-wide deployments
+  - group: '*'
+    kind: '*'

@@ -1,0 +1,9 @@
+apiVersion: v1
+data:
+  type: Z2l0
+  url: aHR0cHM6Ly9naXRodWIuY29tL01pY2hpZWxWYW5IZXJyZXdlZ2hlL2dpdG9wcy1kZW1vLmdpdA==
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: repository
+  namespace: argocd
