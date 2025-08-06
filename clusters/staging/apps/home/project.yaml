@@ -1,14 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: cluster-core
+  name: home
   namespace: argocd
 spec:
-  description: An ArgoCD project for core cluster components
+  description: An ArgoCD project for the home application
   sourceRepos:
-    - '*' # Allow all source repositories
+    - https://charts.bitnami.com/bitnami
+    - https://github.com/MichielVanHerreweghe/gitops-demo.git
   destinations:
-    - namespace: '*' # Allow all namespaces for core components
+    - namespace: 'home' # Allow all namespaces for aks-components
       server: https://kubernetes.default.svc
   clusterResourceWhitelist: # Allow cluster-wide deployments
   - group: '*'
